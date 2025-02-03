@@ -9,3 +9,5 @@ Rules aer fundamental in code as esseantially everything you write in code is a 
 
 #### Glitches 
 I really liked my workshop 3 exploration - the morer you click, the more tinted the images became. I could replace the tint with glitches - the more you click, the more the image glitches, playing into the idea of entropy - where the chaos, or entropy of the universe tends to a maximum. The more you interact with something, the less ordered it becomes. Consumerism - use breaks things down, but if you leave it as it is it will remain pristine. Naivety. The more you think, the more problems you discover. 
+
+Im also intrigued by the idea of 'designing imperfection' which is actual an essential technique in art that focuses on realism. to be real is to be imperfect.
