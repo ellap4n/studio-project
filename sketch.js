@@ -43,7 +43,7 @@ function mousePressed() {
       fill(0);
       text('upload failed. please reload and try again', windowWidth/2, windowHeight/2);
     }
-  } else if (mouseCount> 1 && mouseCount&7 ===0) {
+  } else if (mouseCount> 1 && mouseCount%7 ===0) {
     //glitch style 1: 
     loadPixels();
     erase();
