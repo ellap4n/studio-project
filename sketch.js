@@ -1,3 +1,4 @@
+
 let milkyVintage;
 let i;
 let mouseCount = 0;
@@ -38,12 +39,11 @@ function mousePressed() {
       // uploaded not on first click.....
       clear();
       imgInput.hide();
-      background(0);
       textSize(20);
       fill(0);
       text('upload failed. please reload and try again', windowWidth/2, windowHeight/2);
     }
-  } else if (mouseCount> 1) {
+  } else if (mouseCount> 1 && mouseCount&7 ===0) {
     //glitch style 1: 
     loadPixels();
     erase();
@@ -72,6 +72,29 @@ function mousePressed() {
     rgb.push(m);
     fill(random(rgb));
     rect(random(windowWidth/3, windowWidth), 0, random(0.1, 0.3), windowHeight);
+  }
+
+  if (mouseCount%3 == 0) {
+    let x, y;
+    x = floor(random(20, windowWidth-20));
+    y = floor(random(20, windowHeight-20));
+    fill(get(x, y));
+    rect(x - 10, y - 10, 20, 20);
+    if((mouseCount/3)%3 == 0) {
+      fill(get(x+20, y+20));
+      rect(x + 10, y + 10, 20, 20);
+      fill(get(x+20, y));
+      rect(x + 10, y-10, 20, 20);
+    }
+    if((mouseCount/3)%4 == 0) {
+      fill(get(x+20, y+20));
+      rect(x + 10, y + 10, 20, 20);
+      fill(get(x, y+20));
+      rect(x - 10, y+10, 20, 20);
+      fill(get(x-20, y));
+      rect(x - 30, y-10, 20, 20);
+    }
+
   }
   mouseCount ++;
 }
