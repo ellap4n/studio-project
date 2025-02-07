@@ -5,7 +5,7 @@ let imgInput;
 let img;
 
 function preload() {
-  milkyVintage = loadFont("/milky_vintage/MilkyVintage-Regular.ttf");
+  milkyVintage = loadFont("MilkyVintage-Regular.ttf");
 }
 
 function setup() {
