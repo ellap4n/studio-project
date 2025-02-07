@@ -2,7 +2,6 @@ let milkyVintage;
 let i, a;
 let art
 let mouseCount = 0;
-let greenCount = 0;
 let imgInput;
 let img;
 
