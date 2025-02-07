@@ -94,6 +94,21 @@ function mousePressed() {
       fill(get(x-20, y));
       rect(x - 30, y-10, 20, 20);
     }
+    if((mouseCount/3)%7 == 0) {
+      fill(get(x+20, y+20));
+      rect(x + 10, y + 10, 20, 20);
+      fill(get(x, y+20));
+      rect(x - 10, y+10, 20, 20);
+      fill(get(x-20, y));
+      rect(x - 30, y-10, 20, 20);
+      fill(get(x-40, y));
+      rect(x - 50, y-10, 20, 20);
+      fill(get(x+20, y+40));
+      rect(x + 10, y + 30, 20, 20);
+      fill(get(x+40, y+20));
+      rect(x + 40, y + 10, 20, 20);
+      
+    }
 
   }
   mouseCount ++;
