@@ -1,5 +1,6 @@
 # studio-project
 (still very much in progress I haven't coded a lot of it yet)
+the URL for my webpage is: https://ellap4n.github.io/studio-project/
 ## Formulating the idea
 I'm interested in art from rules and glitches. Both are topics with endless possibilities within. 
 
