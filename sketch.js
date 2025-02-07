@@ -1,15 +1,11 @@
 let milkyVintage;
-let i, a;
-let art
+let i;
 let mouseCount = 0;
 let imgInput;
 let img;
 
 function preload() {
   milkyVintage = loadFont("/milky_vintage/MilkyVintage-Regular.ttf");
-  //load all images
-  art = loadImage('art.jpg');
-
 }
 
 function setup() {
