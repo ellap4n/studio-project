@@ -50,3 +50,7 @@ https://p5js.org/reference/p5/erase/
 
 ### Ripple/Noise 
 I want to try experiment with ripple and noise using pixel displacement methods. 
+
+## Save File 
+After the online class 12/02 I got the suggestion to create the save function where it saves after a time interval so the image you want to be 'saved' is different 
+
