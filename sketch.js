@@ -11,7 +11,6 @@ let amplitude;
 let cnv;
 let copyN = 1;
 let saveImage;
-let pixelate = false;
 
 function preload() {
   milkyVintage = loadFont("MilkyVintage-Regular.ttf");
@@ -135,13 +134,14 @@ function mousePressed() {
     rgb.push(w);
     fill(random(rgb));
 
+    //larger glitch chunks
     if((mouseCount/5)%5 ==0) {
       rect(random(windowWidth/3, windowWidth), 0, random(30, 200), windowHeight);
     } else {
       rect(random(windowWidth/3, windowWidth), 0, random(0.1, 0.4), windowHeight);
     }
   }
-
+// pixels random
   if (mouseCount%3 == 0 && mouseCount > 0) {
     let x, y;
     x = floor(random(20, windowWidth-20));
@@ -178,17 +178,21 @@ function mousePressed() {
       
     }
   }
+
+  //duplicating areas of canvas
   if(mouseCount > 60 && mouseCount%4 == 0) {
     copy(cnv, random(0, width-30), random(0, height - 30), random(copyN*10, copyN*10 + 150), random(copyN*10,copyN*10 + 100), random(0, width-30), random(0, height - 30), random(copyN*12, copyN*10 + 150), random(copyN*12, copyN*10 + 110));
     copyN ++;
   }
+
+  //triggering sound
   if(mouseCount == 100) {
     staticGlitch();
   }
   mouseCount ++;
 }
 
-// interval glitches 
+// glitches with the audio
 function staticGlitch() {
   clipNoise.loop(true);
   clipNoise.play();
@@ -213,6 +217,7 @@ function draw() {
   var amp;
   let mouseCol = get(mouseX, mouseY);
 
+  //changing colour
   clipNoise.addCue(0, changeCol, [16, 84, 194, 60] );
   clipNoise.addCue(0.5, changeCol, mouseCol );
   clipNoise.addCue(1, changeCol, [207, 48, 255, 60] );
@@ -232,7 +237,7 @@ function draw() {
   clipNoise.addCue(6.2, changeCol, [255, 60] );
   clipNoise.addCue(6.5, changeCol, mouseCol );
   
-
+//map values to become useful
   if(clipNoise.isPlaying()) {
     amp = map(value, 0, 0.5, 5, 30);
   } else {
