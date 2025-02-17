@@ -1,4 +1,4 @@
-# studio-project
+![Screenshot 2025-02-16 153532](https://github.com/user-attachments/assets/55ac1585-5d7a-4f64-8043-bd06a26c9947)![Screenshot 2025-02-16 211150](https://github.com/user-attachments/assets/50a4abf0-921b-4f58-b031-ce45363d8d43)# studio-project
 my studio project!
 the URL for my webpage is: https://ellap4n.github.io/studio-project/
 
@@ -72,8 +72,17 @@ I didn't want to add this on a whole new block of code, so added an extra condit
     }
 ```
 
+
+
+
 ### Ripple/Noise 
 I want to try experiment with ripple and noise using pixel displacement methods. 
+![Screenshot 2025-02-12 135439](https://github.com/user-attachments/assets/c4407278-c655-41a6-a5c2-b2c53f9c48a6)
+
+
+### Canvas Image duplication
+
+![Screenshot 2025-02-16 164944](https://github.com/user-attachments/assets/5a8a3613-1cd3-49ed-8c02-86e3817266c6)
 
 ## Sound 
 I decided to add sound to the dead screen segment - as the glitches were as said, not very noticeable, and seemed quite underwhelming. I just got some sounds off freesounds, and used the following p5js reference to load them up.
@@ -91,15 +100,32 @@ Playing with sound made me want to use sound to control a glitch - the way chaos
 https://www.youtube.com/watch?v=NCCHQwNAN6Y
 https://p5js.org/reference/p5.Amplitude/getLevel/
 
+
+
 ### Variation 
-After implementing this function, it worked, but I noticed there was barely any variation in my test object (circle size). I tried mapping the sound to different ranges but it still didn't variate much, which was weird - until I found the sound file again
+After implementing this function, it worked, but I noticed there was barely any variation in my test object 
+This is my first attempt using a square with varying colours (supposedly)
+![Screenshot 2025-02-16 153532](https://github.com/user-attachments/assets/bc33a4cf-9fcf-4a0e-97f6-82a6a7ecf491)
+
+But there was barely any noticable variation, so I changed the object to a circle with varying diameter - this was a tiny bit more obvious but still too minimal to be of any significant use. 
+![Screenshot 2025-02-16 154330](https://github.com/user-attachments/assets/ead5b541-38bb-452c-b40f-b068605cae7a)
+![Screenshot 2025-02-16 154337](https://github.com/user-attachments/assets/57111292-5d3a-4a68-98d0-2ff53f88b6f2)
+
+I tried mapping the sound to different ranges but it still didn't variate much, which was weird - until I found the sound file again
 ![image](https://github.com/user-attachments/assets/486ce8df-467a-4baf-8447-5a12f87b0706)
+
 Here is the wave form of the sound file - there was barely any amplitude variation... which explained why my object did not vary much. 
 I have decided to find a different glitchy noise - but one with huge variations to the amplitude. 
 This Sound I found:
 [https://freesound.org/people/staticpony1/sounds/249604/](https://freesound.org/people/KodyTron/sounds/641923/)
+![image](https://github.com/user-attachments/assets/d3cccd69-152f-4d23-9d96-358f76a10a46)
+
 
 had a much prettier waveform, so I will use this as the new static sound. 
+
+### Building the Glitch 
+Now that I have tested that my code for the varying amplitude works, I can take these values and create a glitch from it. This one was the 'final' effect so needed to take up most of the screen. 
+![Screenshot 2025-02-17 213614](https://github.com/user-attachments/assets/ccba6a24-dd82-4407-ba65-e33f86a465d6)
 
 #### cueing colours
 the sound clip is 6.7 seconds long, 
@@ -111,6 +137,7 @@ I tested it out on a real, higher defintion image, and it was difficult to see t
 
 ## Save File 
 After the online class 12/02 I got the suggestion to create the save function where it saves after a time interval so the image you want to be 'saved' is different. 
+![Screenshot 2025-02-16 211150](https://github.com/user-attachments/assets/9cb66891-e04c-4a7c-97c8-0052672396ea)
 
 ## Final Touches
 Finally, I made the cursor a hand, to visually prompt the user to 'click'
