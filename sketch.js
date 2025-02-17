@@ -186,7 +186,7 @@ function mousePressed() {
   }
 
   //triggering sound
-  if(mouseCount == 100) {
+  if(mouseCount == 110) {
     staticGlitch();
   }
   mouseCount ++;
