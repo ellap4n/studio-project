@@ -47,10 +47,42 @@ https://p5js.org/reference/p5/erase/
     rect(random(windowWidth/3, windowWidth), 0, random(0.1, 0.3), windowHeight);
   }
 ```
+during the live lecture, one classmate said she didn't quite notice the glitch - which is the effect I want at the start, but I also wanted to trigger a larger "dead screen" portion
 
 ### Ripple/Noise 
 I want to try experiment with ripple and noise using pixel displacement methods. 
 
+## Sound 
+https://p5js.org/reference/p5/loadSound/
+https://freesound.org/people/AlienXXX/sounds/193703/
+https://freesound.org/people/Xiko__/sounds/711112/
+https://freesound.org/people/Toine/sounds/7682/
+https://freesound.org/people/SilverIllusionist/sounds/696593/
+
+https://www.youtube.com/watch?v=NCCHQwNAN6Y
+https://p5js.org/reference/p5.Amplitude/getLevel/
+
+### Variation 
+After implementing this function, it worked, but I noticed there was barely any variation in my test object (circle size). I tried mapping the sound to different ranges but it still didn't variate much, which was weird - until I found the sound file again
+![image](https://github.com/user-attachments/assets/486ce8df-467a-4baf-8447-5a12f87b0706)
+Here is the wave form of the sound file - there was barely any amplitude variation... which explained why my object did not vary much. 
+I have decided to find a different glitchy noise - but one with huge variations to the amplitude. 
+This Sound I found:
+[https://freesound.org/people/staticpony1/sounds/249604/](https://freesound.org/people/KodyTron/sounds/641923/)
+
+had a much prettier waveform, so I will use this as the new static sound. 
+
+#### cueing colours
+the sound clip is 6.7 seconds long, 
+https://p5js.org/reference/p5.SoundFile/addCue/
+
+#### Line Style
+
+
+
 ## Save File 
 After the online class 12/02 I got the suggestion to create the save function where it saves after a time interval so the image you want to be 'saved' is different 
+
+## Final Touches
+Finally, I made the cursor a hand, to visually prompt the user to 'click'
 
