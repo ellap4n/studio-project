@@ -1,12 +1,13 @@
 # studio-project
-(still very much in progress I haven't coded a lot of it yet)
+my studio project!
 the URL for my webpage is: https://ellap4n.github.io/studio-project/
+
 ## Formulating the idea
 I'm interested in art from rules and glitches. Both are topics with endless possibilities within. 
 
 #### Art from rules
 The idea for this topic I have is for the user to answer a prompt, and the code will scan the string for specific characters or rules (# of vowels etc.) which will trigger different outcomes. Each response would output a unique outcome based on these 'rules'. 
-Rules aer fundamental in code as esseantially everything you write in code is a rule - its unchanging and cannot be removed once determined. 
+Rules are fundamental in code as esseantially everything you write in code is a rule - its unchanging and cannot be removed once determined. 
 
 #### Glitches 
 I really liked my workshop 3 exploration - the morer you click, the more tinted the images became. I could replace the tint with glitches - the more you click, the more the image glitches, playing into the idea of entropy - where the chaos, or entropy of the universe tends to a maximum. The more you interact with something, the less ordered it becomes. Consumerism - use breaks things down, but if you leave it as it is it will remain pristine. Naivety. The more you think, the more problems you discover. 
@@ -16,17 +17,30 @@ Im also intrigued by the idea of 'designing imperfection' which is actual an ess
 ## Going with the glitch idea:
 Each time the user clicks, a new glitch will appear. The idea is that the user can decide if they want to introduce more distortion into the image or not. 
 The distortions will begin small at first, and eventually become very distorted the more the user clicks. 
+This plays in the idea of entropy and will be further explained in my critical reflection. 
 I am using a mouse count to keep track of the number of clicks, and triggering special events based on these. 
 
 
 ### User image input:
 the whole idea is how glitches can manipulate the image and so I decided to create a environment where the user can upload their own image. Found the documentation at:https://p5js.org/reference/p5/createFileInput/
 the intro page saya to 'upload an image you like' which prompts the user to upload something they like the original look of. 
+
 ### Erasure
+the first 'glitch' I am designing is little 'erased areas' that are only a few pixels in width. I used this tool found on p5js reference:
 https://p5js.org/reference/p5/erase/
+The effect was quite bland at first - the areas were successfully erased, but it didn't showcase a digital glitch - so I decided to create little rectangle bars above these areas where its almost like the first layer is erased and the edges of the technicalities underneath are 'exposed' 
+
+to do this, the random numbers needed to first be input into a variable so the colored rectangles could follow the same cooridinates. 
+
 
 ### Screen damage
+The next effect I decided on was screen damage - inspired by my actual damaged screen .... 
+I love the 'dead' pixel look where areas of screens malfunction, and searched up images of broken screens to roughly colour pick the colours that appear most often when this happens. Of course I also included cyan which is the colour of the one on my screen at the moment. 
 
+#### Intervals
+Using mouseCount to keep track of the click number, I had to find a way to set number triggers to the different events. 
+I actually created this interval first, then applied the concept to the previous erase glitch, which was operating every click. 
+I tried dividing at first, not realising that it'd only happen once... the function I was looking for is modulus!. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder
 % (modulus) is something I've used before, and a good way to trigger things on intervaled counts. I have set the screen damage effect every 5 clicks. 
 ```
  if (mouseCount%5 === 0) {
@@ -47,17 +61,32 @@ https://p5js.org/reference/p5/erase/
     rect(random(windowWidth/3, windowWidth), 0, random(0.1, 0.3), windowHeight);
   }
 ```
-during the live lecture, one classmate said she didn't quite notice the glitch - which is the effect I want at the start, but I also wanted to trigger a larger "dead screen" portion
+#### Bigger blocks
+During the live lecture, one classmate said she didn't quite notice the glitch - which is the effect I want at the start, but I also wanted to trigger a larger "dead screen" portion. 
+I didn't want to add this on a whole new block of code, so added an extra conditional, which would trigger a larger block of dead screen every five times this function was triggered. 
+```
+    if((mouseCount/5)%5 ==0) {
+      rect(random(windowWidth/3, windowWidth), 0, random(30, 200), windowHeight);
+    } else {
+      rect(random(windowWidth/3, windowWidth), 0, random(0.1, 0.4), windowHeight);
+    }
+```
 
 ### Ripple/Noise 
 I want to try experiment with ripple and noise using pixel displacement methods. 
 
 ## Sound 
+I decided to add sound to the dead screen segment - as the glitches were as said, not very noticeable, and seemed quite underwhelming. I just got some sounds off freesounds, and used the following p5js reference to load them up.
 https://p5js.org/reference/p5/loadSound/
 https://freesound.org/people/AlienXXX/sounds/193703/
 https://freesound.org/people/Xiko__/sounds/711112/
 https://freesound.org/people/Toine/sounds/7682/
 https://freesound.org/people/SilverIllusionist/sounds/696593/
+
+To prevent repetition, I pushed them into an array, which the function would then pick one at random to play when the event is triggered. 
+
+## Audio Glitch
+Playing with sound made me want to use sound to control a glitch - the way chaos unfolds if often influenced by the environment where it is found. Looking through the p5js reference, I saw that there were a number of different ways you could pull values from audio - but I had my eyes set on the amplitude value. This proved to be a fatal decision because the amount of troubleshooting and debuggins I went through to get this to work was astonishing. But I finally got it to work in the end
 
 https://www.youtube.com/watch?v=NCCHQwNAN6Y
 https://p5js.org/reference/p5.Amplitude/getLevel/
@@ -77,11 +106,11 @@ the sound clip is 6.7 seconds long,
 https://p5js.org/reference/p5.SoundFile/addCue/
 
 #### Line Style
-
+I tested it out on a real, higher defintion image, and it was difficult to see the original, so I changed the line style to be thinner and more compact. 
 
 
 ## Save File 
-After the online class 12/02 I got the suggestion to create the save function where it saves after a time interval so the image you want to be 'saved' is different 
+After the online class 12/02 I got the suggestion to create the save function where it saves after a time interval so the image you want to be 'saved' is different. 
 
 ## Final Touches
 Finally, I made the cursor a hand, to visually prompt the user to 'click'
