@@ -147,9 +147,9 @@ I tested it out on a real, higher defintion image, and it was difficult to see t
 
 ## Save File 
 After the online class 12/02 I got the suggestion to create the save function where it saves after a time interval so the image you want to be 'saved' is different. 
-to do this, I made two seperate functions - one for the save prompt, which then created a settimeout to the actual save file. 
+to do this, I made two seperate functions - one for the save prompt, which then created a settimeout to the actual save file. https://p5js.org/reference/p5/saveCanvas/
 A button was created for the save canvas, which prompts the user to enter a name for their finished artwork (yay!!), and the actual file is saved 10 seconds later. during this time the user can still make changes to the screen. 
-https://p5js.org/reference/p5/saveCanvas/
+
 
 Here is a tester I did!
 ![Screenshot 2025-02-16 211150](https://github.com/user-attachments/assets/9cb66891-e04c-4a7c-97c8-0052672396ea)
