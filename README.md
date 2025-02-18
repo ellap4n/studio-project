@@ -157,3 +157,6 @@ Here is a tester I did!
 ## Final Touches
 Finally, I made the cursor a hand, to visually prompt the user to 'click'
 
+## Next Steps
+The next step for me, as stated in my critical reflection, would be to deepen my understanding of the code language in order to reach in and manipulate data to create glitches at the data level. 
+
