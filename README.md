@@ -1,4 +1,4 @@
-![Screenshot 2025-02-16 153532](https://github.com/user-attachments/assets/55ac1585-5d7a-4f64-8043-bd06a26c9947)![Screenshot 2025-02-16 211150](https://github.com/user-attachments/assets/50a4abf0-921b-4f58-b031-ce45363d8d43)# studio-project
+# studio-project
 my studio project!
 the URL for my webpage is: https://ellap4n.github.io/studio-project/
 
@@ -73,20 +73,25 @@ I didn't want to add this on a whole new block of code, so added an extra condit
 ```
 
 
-
-
 ### Ripple/Noise 
-I want to try experiment with ripple and noise using pixel displacement methods. 
+I want to try experiment with ripple and noise using pixel displacement methods. this was not too difficult as I had worked with a similar code during a past engineering project where we had to manually code the blur filter. I did this by obtaining a central colour of a random position on the image, then creating a square that surrounded it. 
 ![Screenshot 2025-02-12 135439](https://github.com/user-attachments/assets/c4407278-c655-41a6-a5c2-b2c53f9c48a6)
+
+#### Different Sizes
+I then added a few different shaped 'blocks' of pixel, to create a bit of variation. If I had more time, I'd try figure out how to create as many squares in a chunk as I want, randomly. 
 
 
 ### Canvas Image duplication
+Next, I needed to do something bigger. I always had on my mind a kind of image copy, where areas are enlarged, chopped and changed etc. This was very confusing, and I tried using loadpixels at first, but it didn;t quite work. I then tried to preload areas of the image using the copy function https://p5js.org/reference/p5.Image/copy/ but the result was the same section copied. I wanted random sections of different sizes each time the function was called. 
 
+Finally, I tried creating a variable which the canvas itself can be called, and copy straight from here. It finally worked as below:
 ![Screenshot 2025-02-16 164944](https://github.com/user-attachments/assets/5a8a3613-1cd3-49ed-8c02-86e3817266c6)
 
 ## Sound 
 I decided to add sound to the dead screen segment - as the glitches were as said, not very noticeable, and seemed quite underwhelming. I just got some sounds off freesounds, and used the following p5js reference to load them up.
 https://p5js.org/reference/p5/loadSound/
+
+these are the links to the sound files used: 
 https://freesound.org/people/AlienXXX/sounds/193703/
 https://freesound.org/people/Xiko__/sounds/711112/
 https://freesound.org/people/Toine/sounds/7682/
@@ -95,10 +100,15 @@ https://freesound.org/people/SilverIllusionist/sounds/696593/
 To prevent repetition, I pushed them into an array, which the function would then pick one at random to play when the event is triggered. 
 
 ## Audio Glitch
-Playing with sound made me want to use sound to control a glitch - the way chaos unfolds if often influenced by the environment where it is found. Looking through the p5js reference, I saw that there were a number of different ways you could pull values from audio - but I had my eyes set on the amplitude value. This proved to be a fatal decision because the amount of troubleshooting and debuggins I went through to get this to work was astonishing. But I finally got it to work in the end
+Playing with sound made me want to use sound to control a glitch - the way chaos unfolds if often influenced by the environment where it is found. Looking through the p5js reference, I saw that there were a number of different ways you could pull values from audio - but I had my eyes set on the amplitude value. This proved to be a fatal decision because the amount of troubleshooting and debuggins I went through to get this to work was astonishing. But I finally got it to work in the end with the hekp of this youtube video
 
 https://www.youtube.com/watch?v=NCCHQwNAN6Y
 https://p5js.org/reference/p5.Amplitude/getLevel/
+
+the idea was to take the amplitude values at given times and use these values to control a variable. This meant that the shapes needed to be implemented in the draw function, but I couldn't trigger the music in the draw function as I only wanted to trigger it in a specific mouse click. 
+
+to do this I found the function https://p5js.org/reference/p5.SoundFile/isPlaying/ where the triggered function simply plays the audio. 
+A conditonal was added to the draw fucntion that activated when isplaying was true. 
 
 
 
@@ -124,19 +134,24 @@ This Sound I found:
 had a much prettier waveform, so I will use this as the new static sound. 
 
 ### Building the Glitch 
-Now that I have tested that my code for the varying amplitude works, I can take these values and create a glitch from it. This one was the 'final' effect so needed to take up most of the screen. 
+Now that I have tested that my code for the varying amplitude works, I can take these values and create a glitch from it. This one was the 'final' effect so needed to take up most of the screen. I decided to create horizontal sound waves to mimic the environment which it exists: 
 ![Screenshot 2025-02-17 213614](https://github.com/user-attachments/assets/ccba6a24-dd82-4407-ba65-e33f86a465d6)
 
 #### cueing colours
-the sound clip is 6.7 seconds long, 
+It was quite boring, and too smooth and predictable, so I decided I wanted to trigger colour change. This was done using addcue()
 https://p5js.org/reference/p5.SoundFile/addCue/
 
 #### Line Style
-I tested it out on a real, higher defintion image, and it was difficult to see the original, so I changed the line style to be thinner and more compact. 
+I tested it out on a real, higher defintion image, and it was difficult to see the original, so I changed the line style to be thinner and more compact. This meant Both the glitch and the image were still recognisable.
 
 
 ## Save File 
 After the online class 12/02 I got the suggestion to create the save function where it saves after a time interval so the image you want to be 'saved' is different. 
+to do this, I made two seperate functions - one for the save prompt, which then created a settimeout to the actual save file. 
+A button was created for the save canvas, which prompts the user to enter a name for their finished artwork (yay!!), and the actual file is saved 10 seconds later. during this time the user can still make changes to the screen. 
+https://p5js.org/reference/p5/saveCanvas/
+
+Here is a tester I did!
 ![Screenshot 2025-02-16 211150](https://github.com/user-attachments/assets/9cb66891-e04c-4a7c-97c8-0052672396ea)
 
 ## Final Touches
